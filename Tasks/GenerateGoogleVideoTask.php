@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Containers\User\Tasks;
+namespace App\Containers\YoutubeApi\Tasks;
 
 use App\Ship\Parents\Tasks\Task;
 use Google_Client;
