@@ -19,11 +19,11 @@ class UploadVideoAction extends Action
     /**
      * @return mixed
      */
-    public function run(GetRefreshTokenRequest $request)
+    public function run($code)
     {
         $client = Apiato::call("YoutubeApi@GenerateClientTask");
 
-        $client->setAccessToken($client->fetchAccessTokenWithAuthCode($request->code));
+        $client->setAccessToken($client->fetchAccessTokenWithAuthCode($code));
 
         $this->service = new Google_Service_YouTube($client);
 

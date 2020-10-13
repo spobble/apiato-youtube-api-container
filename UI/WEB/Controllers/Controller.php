@@ -17,9 +17,10 @@ class Controller extends WebController
         return redirect($link);
     }
 
-    public function callback(GetRefreshTokenRequest $request)
+    public function callback()
     {
-        $result = Apiato::call('YoutubeApi@UploadVideoAction',[$request]);
+        if(isset($_REQUEST['code']))
+        $result = Apiato::call('YoutubeApi@UploadVideoAction',[$_REQUEST['code']]);
 
         print_r($result); die;
     }
