@@ -29,11 +29,12 @@ class GenerateClientTask extends Task
         $this->client = $client;
 
         $this->apiKey = [
-            'application' => config("youtube-api-container.project_id"),
-            'redirectUri' => config("youtube-api-container.redirect_uri"),
-            'client-id' => config("youtube-api-container.client_id"),
-            'client-secret' => config("youtube-api-container.client_secret")
+            'application' => Config::get("youtube-api.project_id"),
+            'redirectUri' => Config::get("youtube-api.redirect_uri"),
+            'client-id' => Config::get("youtube-api.client_id"),
+            'client-secret' => Config::get("youtube-api.client_secret")
         ];
+
     }
 
 
