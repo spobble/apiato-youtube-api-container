@@ -3,6 +3,7 @@
 namespace App\Containers\YoutubeApi\Tasks;
 
 use App\Ship\Parents\Tasks\Task;
+use Illuminate\Support\Facades\Config;
 use Google_Client;
 use Google_Exception;
 
@@ -48,7 +49,7 @@ class GenerateClientTask extends Task
         $this->client->setScopes([
             'https://www.googleapis.com/auth/youtube.upload',
         ]);
-        $this->client->setRedirectUri($this->apiKey['redirectUri']);
+        $this->client->setRedirectUri(url('/youtube/callback'));
         try {
             $this->client->setClientId($this->apiKey['client-id']);
             $this->client->setClientSecret($this->apiKey['client-secret']);
