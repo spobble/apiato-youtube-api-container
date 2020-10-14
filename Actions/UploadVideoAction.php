@@ -27,9 +27,9 @@ class UploadVideoAction extends Action
 
         $this->service = new Google_Service_YouTube($client);
 
-        $video = Apiato::call("YoutubeApi@GenerateGoogleVideoTask");
-
         $videoData = Session::get('video-data')->toArray();
+
+        $video = Apiato::call("YoutubeApi@GenerateGoogleVideoTask",[$videoData]);
 
         $response = "";
 
