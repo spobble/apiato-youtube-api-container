@@ -5,7 +5,7 @@ Apiato container for managing **Youtube Data Api**. This container has been deve
 
 **Attention:** All others scope must be implemented, so feel free to submit a pull request :)
 
-**EXTRA-ATTENTION**: When you're creating credential.json file from google-console, you **need** to setup redirect_uri to => "https://yoursite.ext/**youtube/callback**". In this way, you will fire Container callback that manage all upload
+**EXTRA-ATTENTION**: When you're creating credential.json file from google-console, you **need** to setup redirect_uri to => "https://yoursite.ext/youtube/callback". In this way, you will fire Container callback that manage all upload
 
 
 ## Setup
